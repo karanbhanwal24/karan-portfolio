@@ -35,7 +35,7 @@ const education = [
   {
     title: 'Class X',
     subtitle: 'Beersheba Senior Secondary School',
-    meta: '94% · 2020',
+    meta: '84% · 2020',
   },
 ]
 
