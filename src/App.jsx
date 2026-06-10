@@ -112,38 +112,61 @@ export default function App() {
           <div className="pointer-events-none absolute -top-24 left-1/2 h-96 w-96 -translate-x-1/2 rounded-full bg-accent/10 blur-3xl"></div>
           <div className="pointer-events-none absolute bottom-0 right-0 h-80 w-80 rounded-full bg-violet-500/10 blur-3xl"></div>
 
-          <header className="relative mx-auto flex max-w-7xl flex-wrap items-center justify-center gap-3 px-4 py-6 sm:justify-end sm:px-8 sm:py-8 lg:px-10">
+          <header className="relative mx-auto max-w-7xl px-4 py-5 sm:flex sm:flex-wrap sm:items-center sm:justify-end sm:gap-3 sm:px-8 sm:py-8 lg:px-10">
+            <div className="flex items-start justify-between gap-4 pt-10 sm:hidden">
+              <div className="min-w-0 flex-1 space-y-3">
+                <div className="max-w-[220px] rounded-[24px] border border-slate-200 bg-white/85 px-4 py-3 shadow-soft backdrop-blur dark:border-white/10 dark:bg-slate-900/70">
+                  <p className="text-lg font-bold leading-tight tracking-tight text-slate-950 dark:text-white">
+                    Karan Singh Bhanwal
+                  </p>
+                </div>
+                <a
+                  href={resumeHref}
+                  download
+                  className="inline-flex min-h-11 items-center justify-center rounded-full border border-accent/40 bg-accent px-5 py-3 text-sm font-medium text-slate-950 transition hover:bg-white hover:text-slate-950"
+                >
+                  Download Resume
+                </a>
+              </div>
+              <div className="shrink-0 rounded-full border border-slate-200 bg-white/85 p-1.5 shadow-soft backdrop-blur dark:border-white/10 dark:bg-slate-900/70">
+                <img
+                  src={profileImage}
+                  alt="Karan Singh Bhanwal"
+                  className="h-16 w-16 rounded-full object-cover"
+                />
+              </div>
+            </div>
             <a
               href={resumeHref}
               download
-              className="inline-flex min-h-11 w-full items-center justify-center rounded-full border border-accent/40 bg-accent px-5 py-3 text-sm font-medium text-slate-950 transition hover:bg-white hover:text-slate-950 sm:w-auto sm:py-2"
+              className="hidden min-h-11 w-full items-center justify-center rounded-full border border-accent/40 bg-accent px-5 py-3 text-sm font-medium text-slate-950 transition hover:bg-white hover:text-slate-950 sm:inline-flex sm:w-auto sm:py-2"
             >
               Download Resume
             </a>
             <button
               onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-              className="min-h-11 w-full rounded-full border border-slate-300 bg-white/90 px-4 py-3 text-sm text-slate-700 transition hover:border-accent hover:text-slate-950 dark:border-slate-600/40 dark:bg-white/5 dark:text-slate-100 dark:hover:text-white sm:w-auto sm:py-2"
+              className="absolute right-4 top-4 inline-flex h-9 items-center justify-center rounded-full border border-slate-300 bg-white/95 px-3 text-xs font-medium text-slate-700 transition hover:border-accent hover:text-slate-950 dark:border-slate-600/40 dark:bg-slate-900/85 dark:text-slate-100 dark:hover:text-white sm:static sm:h-auto sm:w-auto sm:px-4 sm:py-2 sm:text-sm"
             >
-              {theme === 'dark' ? 'Light mode' : 'Dark mode'}
+              {theme === 'dark' ? 'Light' : 'Dark'}
             </button>
           </header>
 
           <main className="mx-auto max-w-7xl px-4 pb-20 sm:px-8 sm:pb-24 lg:px-10">
-            <section className="mb-8 sm:mb-10">
+            <section className="mb-8 hidden sm:mb-10 sm:block">
               <div className="inline-flex max-w-3xl rounded-[28px] border border-slate-200 bg-white/80 px-5 py-4 shadow-soft backdrop-blur dark:border-white/10 dark:bg-slate-900/60 sm:px-6 sm:py-5">
                 <p className="text-2xl font-bold tracking-tight text-slate-950 sm:text-5xl dark:text-white">Karan Singh Bhanwal</p>
               </div>
             </section>
 
-            <section className="relative grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-start lg:gap-10">
+            <section className="relative grid gap-5 sm:gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-start lg:gap-10">
               <motion.div
                 initial="hidden"
                 animate="visible"
                 variants={fadeUp}
                 transition={{ duration: 0.8, ease: 'easeOut' }}
-                className="space-y-6 sm:space-y-8"
+                className="space-y-4 sm:space-y-8"
               >
-                <div className="max-w-3xl rounded-[28px] border border-slate-200 bg-white/80 p-5 shadow-soft backdrop-blur-xl dark:border-white/10 dark:bg-slate-900/80 sm:rounded-[32px] sm:p-8">
+                <div className="max-w-3xl rounded-[24px] border border-slate-200 bg-white/80 p-4 shadow-soft backdrop-blur-xl dark:border-white/10 dark:bg-slate-900/80 sm:rounded-[32px] sm:p-8">
                   <h1 className="text-3xl font-semibold tracking-tight text-slate-950 sm:text-5xl dark:text-white">
                     <span className="block">Software Engineer</span>
                     <span className="mt-2 block text-slate-600 dark:text-slate-300">Backend Development</span>
@@ -159,34 +182,34 @@ export default function App() {
                   <p className="mt-6 max-w-2xl text-base leading-7 text-slate-700 dark:text-slate-300 sm:text-lg sm:leading-8">
                     Experienced with MERN development, Python, SQL, REST API design, and data structures and algorithms in Java. Passionate about building practical software systems with strong backend foundations.
                   </p>
-                  <div className="mt-8 flex flex-wrap gap-3 text-sm text-slate-700 dark:text-slate-300">
-                    <span className="inline-flex min-h-11 items-center rounded-full bg-slate-200 px-4 py-2 text-slate-800 shadow-glow dark:bg-slate-950/40 dark:text-slate-100">Haldwani, Uttarakhand, India</span>
+                  <div className="mt-6 grid gap-2 text-sm text-slate-700 dark:text-slate-300 sm:mt-8 sm:flex sm:flex-wrap sm:gap-3">
+                    <span className="inline-flex min-h-10 items-center rounded-full bg-slate-200 px-4 py-2 text-slate-800 shadow-glow dark:bg-slate-950/40 dark:text-slate-100">Haldwani, Uttarakhand, India</span>
                     <a
                       href={contactLinks.whatsapp}
                       target="_blank"
                       rel="noreferrer"
-                      className="inline-flex min-h-11 items-center rounded-full border border-slate-300 bg-white px-4 py-2 text-slate-700 transition hover:border-accent hover:text-slate-950 dark:border-slate-600/40 dark:bg-white/5 dark:text-slate-300 dark:hover:text-white"
+                      className="inline-flex min-h-10 items-center rounded-full border border-slate-300 bg-white px-4 py-2 text-slate-700 transition hover:border-accent hover:text-slate-950 dark:border-slate-600/40 dark:bg-white/5 dark:text-slate-300 dark:hover:text-white"
                     >
                       +91 7452009449
                     </a>
                     <a
                       href={contactLinks.email}
-                      className="inline-flex min-h-11 max-w-full items-center rounded-full border border-slate-300 bg-white px-4 py-2 text-slate-700 transition hover:border-accent hover:text-slate-950 dark:border-slate-600/40 dark:bg-white/5 dark:text-slate-300 dark:hover:text-white"
+                      className="inline-flex min-h-10 max-w-full items-center rounded-full border border-slate-300 bg-white px-4 py-2 text-slate-700 transition hover:border-accent hover:text-slate-950 dark:border-slate-600/40 dark:bg-white/5 dark:text-slate-300 dark:hover:text-white"
                     >
                       <span className="break-all">Karann.bhanwal@gmail.com</span>
                     </a>
                   </div>
                 </div>
 
-                <div className="grid gap-4 sm:grid-cols-3">
+                <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4">
                   {stats.map((item) => (
                     <motion.div
                       key={item.label}
                       whileHover={{ y: -4 }}
-                      className="rounded-3xl border border-slate-200 bg-white/80 p-5 shadow-soft backdrop-blur dark:border-white/10 dark:bg-slate-900/70 sm:p-6"
+                      className="rounded-[24px] border border-slate-200 bg-white/80 p-4 shadow-soft backdrop-blur dark:border-white/10 dark:bg-slate-900/70 sm:rounded-3xl sm:p-6"
                     >
-                      <p className="text-3xl font-semibold text-slate-950 dark:text-white sm:text-4xl">{item.value}</p>
-                      <p className="mt-3 text-sm text-slate-500 dark:text-slate-400">{item.label}</p>
+                      <p className="text-2xl font-semibold text-slate-950 dark:text-white sm:text-4xl">{item.value}</p>
+                      <p className="mt-2 text-xs text-slate-500 dark:text-slate-400 sm:mt-3 sm:text-sm">{item.label}</p>
                     </motion.div>
                   ))}
                 </div>
@@ -196,12 +219,12 @@ export default function App() {
                 initial={{ opacity: 0, x: 60 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.9, delay: 0.2, ease: 'easeOut' }}
-                className="relative overflow-hidden rounded-[32px] border border-slate-200 bg-white/80 p-5 shadow-soft backdrop-blur dark:border-white/10 dark:bg-slate-900/70 sm:rounded-[40px] sm:p-8"
+                className="relative overflow-hidden rounded-[24px] border border-slate-200 bg-white/80 p-4 shadow-soft backdrop-blur dark:border-white/10 dark:bg-slate-900/70 sm:rounded-[40px] sm:p-8"
               >
                 <div className="absolute left-8 top-6 h-20 w-20 rounded-full bg-accent/10 blur-2xl"></div>
                 <div className="absolute -right-12 top-16 h-40 w-40 rounded-full bg-white/5 blur-3xl"></div>
-                <div className="relative space-y-6">
-                  <div className="mx-auto w-full max-w-sm rounded-[28px] border border-slate-200 bg-slate-100 p-3 shadow-soft dark:border-white/10 dark:bg-slate-950/70 sm:mx-0 sm:rounded-[32px]">
+                <div className="relative space-y-4 sm:space-y-6">
+                  <div className="mx-auto hidden w-full max-w-sm rounded-[28px] border border-slate-200 bg-slate-100 p-3 shadow-soft dark:border-white/10 dark:bg-slate-950/70 sm:mx-0 sm:block sm:rounded-[32px]">
                     <div className="overflow-hidden rounded-[24px] bg-white">
                       <img
                         src={profileImage}
@@ -210,44 +233,44 @@ export default function App() {
                       />
                     </div>
                   </div>
-                  <div className="flex min-h-11 w-full items-center gap-3 rounded-full border border-slate-200 bg-slate-100 px-4 py-3 text-sm text-slate-700 dark:border-white/10 dark:bg-slate-950/80 dark:text-slate-300 sm:inline-flex sm:w-auto">
+                  <div className="flex min-h-10 w-full items-center gap-3 rounded-full border border-slate-200 bg-slate-100 px-4 py-2.5 text-sm text-slate-700 dark:border-white/10 dark:bg-slate-950/80 dark:text-slate-300 sm:inline-flex sm:w-auto sm:py-3">
                     <span className="h-2.5 w-2.5 rounded-full bg-emerald-400"></span>
                     Software developer focused on full-stack and backend systems.
                   </div>
-                  <div className="space-y-4 rounded-[28px] border border-slate-200 bg-slate-100/90 p-5 dark:border-slate-700/60 dark:bg-slate-950/80 sm:rounded-[32px] sm:p-6">
+                  <div className="space-y-3 rounded-[24px] border border-slate-200 bg-slate-100/90 p-4 dark:border-slate-700/60 dark:bg-slate-950/80 sm:rounded-[32px] sm:p-6">
                     <div>
                       <p className="text-sm uppercase tracking-[0.28em] text-slate-500 dark:text-slate-500">Summary</p>
                       <p className="mt-3 text-sm leading-7 text-slate-700 dark:text-slate-300 sm:text-base">
                         Software Engineer and Computer Science graduate with 300+ DSA problems solved in Java and hands-on experience in backend-focused full-stack development. Skilled in Python, MERN Stack, SQL, REST APIs, database design, and authentication systems, with experience building scalable web applications, improving backend performance, and leading end-to-end projects.
                       </p>
                     </div>
-                    <div className="grid gap-4 sm:grid-cols-2">
-                      <div className="rounded-3xl bg-white p-5 text-slate-700 dark:bg-slate-950/95 dark:text-slate-300">Hands-on with MERN stack, RESTful API design, and database management.</div>
-                      <div className="rounded-3xl bg-white p-5 text-slate-700 dark:bg-slate-950/95 dark:text-slate-300">Built secure workflow systems using JWT auth and role-based access control.</div>
+                    <div className="grid grid-cols-2 gap-3 sm:gap-4">
+                      <div className="rounded-[20px] bg-white p-4 text-sm text-slate-700 dark:bg-slate-950/95 dark:text-slate-300 sm:rounded-3xl sm:p-5">Hands-on with MERN stack, RESTful API design, and database management.</div>
+                      <div className="rounded-[20px] bg-white p-4 text-sm text-slate-700 dark:bg-slate-950/95 dark:text-slate-300 sm:rounded-3xl sm:p-5">Built secure workflow systems using JWT auth and role-based access control.</div>
                     </div>
                   </div>
                 </div>
               </motion.div>
             </section>
 
-            <section className="mt-16 grid gap-6 lg:mt-24 lg:grid-cols-[1.2fr_0.8fr] lg:gap-8">
+            <section className="mt-12 grid gap-4 sm:mt-16 sm:gap-6 lg:mt-24 lg:grid-cols-[1.2fr_0.8fr] lg:gap-8">
               <motion.section
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.2 }}
                 variants={fadeUp}
-                className="rounded-[28px] border border-slate-200 bg-white/80 p-5 shadow-soft backdrop-blur dark:border-white/10 dark:bg-slate-900/70 sm:rounded-[32px] sm:p-8"
+                className="rounded-[24px] border border-slate-200 bg-white/80 p-4 shadow-soft backdrop-blur dark:border-white/10 dark:bg-slate-900/70 sm:rounded-[32px] sm:p-8"
               >
                 <p className="text-sm uppercase tracking-[0.3em] text-accent">Education</p>
                 <h2 className="mt-3 text-2xl font-semibold text-slate-950 dark:text-white sm:text-3xl">Academic background</h2>
-                <div className="mt-8 space-y-4">
+                <div className="mt-6 grid grid-cols-2 gap-3 sm:mt-8 sm:space-y-4 sm:block">
                   {education.map((item) => (
-                    <div key={item.title} className="rounded-[24px] border border-slate-200 bg-slate-100/90 p-5 shadow-soft backdrop-blur dark:border-white/10 dark:bg-slate-950/80 sm:rounded-[28px] sm:p-6">
-                      <div className="flex flex-col items-start justify-between gap-3 text-sm text-slate-500 dark:text-slate-400 sm:flex-row sm:items-center sm:gap-4">
+                    <div key={item.title} className="rounded-[20px] border border-slate-200 bg-slate-100/90 p-4 shadow-soft backdrop-blur dark:border-white/10 dark:bg-slate-950/80 sm:rounded-[28px] sm:p-6">
+                      <div className="flex flex-col items-start justify-between gap-2 text-xs text-slate-500 dark:text-slate-400 sm:flex-row sm:items-center sm:gap-4 sm:text-sm">
                         <span>{item.subtitle}</span>
                         <span className="rounded-full bg-white px-3 py-1 text-slate-700 dark:bg-slate-800/80 dark:text-slate-300">{item.meta}</span>
                       </div>
-                      <h3 className="mt-4 text-xl font-semibold text-slate-950 dark:text-white">{item.title}</h3>
+                      <h3 className="mt-3 text-base font-semibold text-slate-950 dark:text-white sm:mt-4 sm:text-xl">{item.title}</h3>
                     </div>
                   ))}
                 </div>
@@ -258,13 +281,13 @@ export default function App() {
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.2 }}
                 variants={fadeUp}
-                className="rounded-[28px] border border-slate-200 bg-white/80 p-5 shadow-soft backdrop-blur dark:border-white/10 dark:bg-slate-900/70 sm:rounded-[32px] sm:p-8"
+                className="rounded-[24px] border border-slate-200 bg-white/80 p-4 shadow-soft backdrop-blur dark:border-white/10 dark:bg-slate-900/70 sm:rounded-[32px] sm:p-8"
               >
                 <p className="text-sm uppercase tracking-[0.3em] text-accent">Certifications</p>
                 <h2 className="mt-3 text-2xl font-semibold text-slate-950 dark:text-white sm:text-3xl">Training</h2>
-                <div className="mt-8 space-y-4">
+                <div className="mt-6 grid grid-cols-2 gap-3 sm:mt-8 sm:space-y-4 sm:block">
                   {certifications.map((item) => (
-                    <div key={item} className="rounded-[24px] border border-slate-200 bg-slate-100/90 p-5 text-slate-700 dark:border-white/10 dark:bg-slate-950/80 dark:text-slate-300 sm:rounded-[28px]">
+                    <div key={item} className="rounded-[20px] border border-slate-200 bg-slate-100/90 p-4 text-sm text-slate-700 dark:border-white/10 dark:bg-slate-950/80 dark:text-slate-300 sm:rounded-[28px] sm:p-5 sm:text-base">
                       {item}
                     </div>
                   ))}
@@ -272,7 +295,7 @@ export default function App() {
               </motion.section>
             </section>
 
-            <section className="mt-16 sm:mt-24">
+            <section className="mt-12 sm:mt-24">
               <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
                 <div>
                   <p className="text-sm uppercase tracking-[0.3em] text-accent">Work Experience</p>
@@ -280,17 +303,17 @@ export default function App() {
                 </div>
                 <p className="max-w-xl text-sm text-slate-500 dark:text-slate-400">Resume-backed experience only.</p>
               </div>
-              <div className="mt-10 space-y-6">
+              <div className="mt-6 space-y-4 sm:mt-10 sm:space-y-6">
                 {experience.map((item) => (
                   <motion.div
                     key={item.company}
                     whileHover={{ y: -4 }}
-                    className="group relative overflow-hidden rounded-[28px] border border-slate-200 bg-white/80 p-5 shadow-soft backdrop-blur transition duration-300 dark:border-white/10 dark:bg-slate-900/70 sm:rounded-[32px] sm:p-8"
+                    className="group relative overflow-hidden rounded-[24px] border border-slate-200 bg-white/80 p-4 shadow-soft backdrop-blur transition duration-300 dark:border-white/10 dark:bg-slate-900/70 sm:rounded-[32px] sm:p-8"
                   >
                     <div className="absolute inset-y-6 left-5 w-1 rounded-full bg-gradient-to-b from-accent to-transparent opacity-70 sm:inset-y-0 sm:left-10"></div>
                     <div className="relative pl-7 sm:ml-16 sm:pl-0">
                       <p className="text-sm uppercase tracking-[0.28em] text-slate-500 dark:text-slate-500">{item.duration}</p>
-                      <div className="mt-4 flex flex-col gap-3">
+                      <div className="mt-3 flex flex-col gap-2 sm:mt-4 sm:gap-3">
                         <div>
                           <h3 className="text-xl font-semibold text-slate-950 dark:text-white sm:text-2xl">{item.role}</h3>
                           <p className="mt-2 text-slate-600 dark:text-slate-400">{item.company}</p>
@@ -308,7 +331,7 @@ export default function App() {
                           ))}
                         </div>
                       </div>
-                      <ul className="mt-5 space-y-3 text-slate-700 dark:text-slate-300">
+                      <ul className="mt-4 space-y-2 text-slate-700 dark:text-slate-300 sm:mt-5 sm:space-y-3">
                         {item.bullets.map((bullet) => (
                           <li key={bullet} className="flex gap-3 text-sm leading-6">
                             <span className="mt-2 h-2.5 w-2.5 shrink-0 rounded-full bg-accent"></span>
@@ -322,16 +345,16 @@ export default function App() {
               </div>
             </section>
 
-            <section className="mt-16 grid gap-6 lg:mt-24 lg:grid-cols-[1.2fr_0.8fr] lg:gap-8">
+            <section className="mt-12 grid gap-4 sm:mt-16 sm:gap-6 lg:mt-24 lg:grid-cols-[1.2fr_0.8fr] lg:gap-8">
               <div>
                 <p className="text-sm uppercase tracking-[0.3em] text-accent">Projects</p>
                 <h2 className="mt-3 text-2xl font-semibold text-slate-950 dark:text-white sm:text-3xl">Selected work from the resume</h2>
-                <div className="mt-10 grid gap-6">
+                <div className="mt-6 grid gap-4 sm:mt-10 sm:gap-6">
                   {projects.map((project) => (
                     <motion.article
                       key={project.title}
                       whileHover={{ y: -6, boxShadow: '0 30px 60px rgba(79,157,255,0.18)' }}
-                      className="rounded-[28px] border border-slate-200 bg-white/80 p-5 shadow-soft backdrop-blur transition duration-300 dark:border-white/10 dark:bg-slate-900/70 sm:rounded-[36px] sm:p-8"
+                      className="rounded-[24px] border border-slate-200 bg-white/80 p-4 shadow-soft backdrop-blur transition duration-300 dark:border-white/10 dark:bg-slate-900/70 sm:rounded-[36px] sm:p-8"
                     >
                       <div className="flex flex-wrap items-center justify-between gap-4">
                         <span className="text-sm uppercase tracking-[0.3em] text-slate-500 dark:text-slate-500">{project.year}</span>
@@ -343,9 +366,9 @@ export default function App() {
                           ))}
                         </div>
                       </div>
-                      <h3 className="mt-6 text-xl font-semibold text-slate-950 dark:text-white sm:text-2xl">{project.title}</h3>
-                      <p className="mt-4 text-sm leading-7 text-slate-700 dark:text-slate-300 sm:text-base">{project.description}</p>
-                      <div className="mt-6">
+                      <h3 className="mt-4 text-lg font-semibold text-slate-950 dark:text-white sm:mt-6 sm:text-2xl">{project.title}</h3>
+                      <p className="mt-3 text-sm leading-6 text-slate-700 dark:text-slate-300 sm:mt-4 sm:leading-7 sm:text-base">{project.description}</p>
+                      <div className="mt-4 sm:mt-6">
                         <a
                           href={project.github}
                           target="_blank"
@@ -365,11 +388,11 @@ export default function App() {
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.2 }}
                 variants={fadeUp}
-                className="rounded-[28px] border border-slate-200 bg-white/80 p-5 shadow-soft backdrop-blur dark:border-white/10 dark:bg-slate-900/70 sm:rounded-[32px] sm:p-8"
+                className="rounded-[24px] border border-slate-200 bg-white/80 p-4 shadow-soft backdrop-blur dark:border-white/10 dark:bg-slate-900/70 sm:rounded-[32px] sm:p-8"
               >
                 <p className="text-sm uppercase tracking-[0.3em] text-accent">Contact</p>
                 <h3 className="mt-3 text-2xl font-semibold text-slate-950 dark:text-white sm:text-3xl">Links and location</h3>
-                <div className="mt-8 grid gap-4 rounded-[24px] bg-slate-100 p-5 text-slate-700 dark:bg-slate-950/80 dark:text-slate-300 sm:rounded-[28px] sm:p-6">
+                <div className="mt-6 grid gap-3 rounded-[20px] bg-slate-100 p-4 text-slate-700 dark:bg-slate-950/80 dark:text-slate-300 sm:mt-8 sm:gap-4 sm:rounded-[28px] sm:p-6">
                   <div className="flex flex-col items-start justify-between gap-2 text-sm sm:flex-row sm:items-center sm:gap-4">
                     <span>Email</span>
                     <a href={contactLinks.email} className="break-all text-slate-700 transition hover:text-slate-950 dark:text-slate-300 dark:hover:text-white sm:text-right">
@@ -387,12 +410,12 @@ export default function App() {
                     <span className="sm:text-right">Haldwani, Uttarakhand, India</span>
                   </div>
                 </div>
-                <div className="mt-6 grid gap-3">
+                <div className="mt-4 grid grid-cols-2 gap-3 sm:mt-6 sm:grid-cols-1">
                   {socialLinks.map((item) => (
                     <a
                       key={item.label}
                       href={item.href}
-                      className="inline-flex min-h-11 items-center justify-center rounded-3xl border border-slate-200 bg-slate-100 px-4 py-3 text-sm text-slate-700 transition hover:border-accent hover:text-slate-950 dark:border-white/10 dark:bg-slate-950/80 dark:text-slate-200 dark:hover:text-white"
+                      className="inline-flex min-h-10 items-center justify-center rounded-[20px] border border-slate-200 bg-slate-100 px-4 py-2.5 text-sm text-slate-700 transition hover:border-accent hover:text-slate-950 dark:border-white/10 dark:bg-slate-950/80 dark:text-slate-200 dark:hover:text-white sm:min-h-11 sm:rounded-3xl sm:py-3"
                     >
                       {item.label}
                     </a>
@@ -401,24 +424,24 @@ export default function App() {
               </motion.div>
             </section>
 
-            <section className="mt-16 sm:mt-24">
+            <section className="mt-12 sm:mt-24">
               <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
                 <div>
                   <p className="text-sm uppercase tracking-[0.3em] text-accent">Skills</p>
                   <h2 className="mt-3 text-2xl font-semibold text-slate-950 dark:text-white sm:text-3xl">Technical skills from the resume</h2>
                 </div>
               </div>
-              <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+              <div className="mt-6 grid grid-cols-2 gap-3 sm:mt-10 sm:gap-5 md:grid-cols-2 xl:grid-cols-3">
                 {skills.map((skill) => (
                   <motion.div
                     key={skill.title}
                     whileHover={{ y: -5 }}
-                    className="rounded-[28px] border border-slate-200 bg-white/80 p-5 shadow-soft backdrop-blur dark:border-white/10 dark:bg-slate-900/70 sm:rounded-[32px] sm:p-6"
+                    className="rounded-[24px] border border-slate-200 bg-white/80 p-4 shadow-soft backdrop-blur dark:border-white/10 dark:bg-slate-900/70 sm:rounded-[32px] sm:p-6"
                   >
-                    <h3 className="text-xl font-semibold text-slate-950 dark:text-white">{skill.title}</h3>
-                    <div className="mt-4 space-y-3 text-slate-700 dark:text-slate-300">
+                    <h3 className="text-base font-semibold text-slate-950 dark:text-white sm:text-xl">{skill.title}</h3>
+                    <div className="mt-3 space-y-2 text-slate-700 dark:text-slate-300 sm:mt-4 sm:space-y-3">
                       {skill.items.map((item) => (
-                        <div key={item} className="rounded-3xl bg-slate-100 px-4 py-3 text-sm dark:bg-slate-950/80">
+                        <div key={item} className="rounded-[18px] bg-slate-100 px-3 py-2 text-xs dark:bg-slate-950/80 sm:rounded-3xl sm:px-4 sm:py-3 sm:text-sm">
                           {item}
                         </div>
                       ))}
